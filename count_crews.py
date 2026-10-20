@@ -2,9 +2,15 @@
 import csv
 
 total = 0
+max_crews = 0
 with open("stations.csv", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for row in reader:
-        total = total + int(row["crews"])
+        crews = int(row["crews"])
+        total = total + crews
+        # заодно ищем самую большую часть
+        if crews > max_crews:
+            max_crews = crews
 
 print("Итого расчетов в регионе:", total)
+print("Больше всего расчетов в одной части:", max_crews)
