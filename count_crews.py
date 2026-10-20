@@ -7,4 +7,4 @@ with open("stations.csv", encoding="utf-8") as f:
     for row in reader:
         total = total + int(row["crews"])
 
-print("Всего расчетов:", total)
+print("Итого расчетов в регионе:", total)
